@@ -28,7 +28,7 @@ wget https://storage.googleapis.com/vit_models/imagenet21k/{MODEL_NAME}.npz &&
 mkdir ../model/vit_checkpoint/imagenet21k &&
 mv {MODEL_NAME}.npz ../model/vit_checkpoint/imagenet21k/{MODEL_NAME}.npz
 
-3 Prepare Data
+3 Prepare Data (The original drone imagery and LiDAR point cloud data used in this study can be obtained by contacting the corresponding author (wukunpeng@ynu.edu.cn) upon reasonable request.)
 
 data/
 └── yanong_glacier/
