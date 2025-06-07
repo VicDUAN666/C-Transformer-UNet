@@ -28,7 +28,8 @@ wget https://storage.googleapis.com/vit_models/imagenet21k/{MODEL_NAME}.npz &&
 mkdir ../model/vit_checkpoint/imagenet21k &&
 mv {MODEL_NAME}.npz ../model/vit_checkpoint/imagenet21k/{MODEL_NAME}.npz
 
-3 Prepare Data (The original drone imagery and LiDAR point cloud data used in this study can be obtained by contacting the corresponding author (wukunpeng@ynu.edu.cn) upon reasonable request.)
+3 Prepare Data 
+(The original drone imagery and LiDAR point cloud data used in this study can be obtained by contacting the corresponding author (wukunpeng@ynu.edu.cn) upon reasonable request.)
 
 data/
 └── yanong_glacier/
@@ -42,7 +43,7 @@ data/
         └── yanong_terminus.las
 
 4 Train
-# Running training scripts on a single GPU
+Running training scripts on a single GPU
 CUDA_VISIBLE_DEVICES=0 python train.py \
     --dataset Yanong \
     --root_path ./data/yanong_glacier/ \
@@ -55,7 +56,7 @@ CUDA_VISIBLE_DEVICES=0 python train.py \
 
 5 Inference & Test
 
-# Push all images in the test set folder
+Push all images in the test set folder
 python inference.py \
     --model_name C-TransUNet \
     --vit_name R50-ViT-B_16 \
@@ -64,6 +65,7 @@ python inference.py \
     --output_dir ./results/masks/
 
 6 3D Parameter Extraction
+
 This is what makes our framework unique.
 After generating a two-dimensional mask image, run the following script in combination with LiDAR point cloud data to calculate the three-dimensional geometric parameters of the ice fissures.
 
